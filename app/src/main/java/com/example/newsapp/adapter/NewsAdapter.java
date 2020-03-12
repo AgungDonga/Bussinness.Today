@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
 
-    private NewsAdapter adapter;
+
     private Activity activity;
     private ArrayList<NewsResult> arrayList;
 
@@ -52,9 +52,11 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         holder.tvAuthor.setText(result.getAuthor());
         holder.tvDate.setText(result.getDate());
         holder.cvNews.setOnClickListener(new CustomOnItemClickListener(position,(view, position1) -> {
+
 //            Toast.makeText(activity,"Pressed",Toast.LENGTH_SHORT).show();//ngecek
             Intent intent = new Intent(activity, DetailArticleActivity.class);
             intent.putExtra(DetailArticleActivity.EXTRA_ARTICLE,result);
+
             activity.startActivity(intent);
         }));
 
@@ -65,12 +67,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         return arrayList.size();
     }
 
-    public class NewsViewHolder extends RecyclerView.ViewHolder {
+    static class NewsViewHolder extends RecyclerView.ViewHolder {
         CardView cvNews;
         TextView tvTitle, tvDate, tvAuthor;
         ImageView ivPoster;
 
-        public NewsViewHolder(@NonNull View itemView) {
+        NewsViewHolder(@NonNull View itemView) {
             super(itemView);
 
             cvNews = itemView.findViewById(R.id.cv_new);

@@ -6,8 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".view.DetailArticleActivity">
 
+
+
     <ImageView
-        android:id="@+id/iv_piggy"
+        android:id="@+id/img_view"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:contentDescription="@string/todo"
@@ -15,9 +18,12 @@
         android:src="@drawable/img_piggy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="14dp"
@@ -28,25 +34,29 @@
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_piggy">
+
+        app:layout_constraintTop_toBottomOf="@+id/img_view">
 
         <TextView
-            android:id="@+id/tv_relaseDate"
+            android:id="@+id/tv_realease_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/mlight"
-            android:text="@string/release_date"/>
+            android:text="@string/release_date" />
 
         <TextView
-            android:id="@+id/tv_piggy"
+            android:id="@+id/tv_title"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/mmedium"
             android:text="@string/piggy"
+
             android:textColor="@color/colorPrimaryDark"
             android:textSize="18dp"
             android:textStyle="bold"/>
+
 
         <TextView
             android:id="@+id/tv_content"
@@ -54,8 +64,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/mregular"
-            android:text="@string/content2"
-            android:textSize="16dp"/>
+
+            android:text="@string/piggy"
+            android:textSize="16sp" />
+
 
     </LinearLayout>
 

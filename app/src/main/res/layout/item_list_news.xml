@@ -3,26 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cv_new"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+
+    android:layout_height="match_parent"
+
     android:layout_marginStart="16dp"
     android:layout_marginTop="8dp"
     android:layout_marginEnd="16dp"
     android:layout_marginBottom="8dp"
-    android:elevation="10dp"
-    app:cardCornerRadius="10dp">
+
+    app:cardCornerRadius="10dp"
+    app:cardElevation="10dp"
+    >
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="16dp">
+
+
+        android:layout_marginBottom="16dp">
+
 
         <ImageView
             android:id="@+id/iv_piggy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+
             android:contentDescription="@string/todo"
-            android:scaleType="fitXY"
+            android:scaleType="fitCenter"
+            android:layout_marginBottom="8dp"
+
             android:src="@drawable/img_piggy" />
 
 
@@ -30,21 +40,23 @@
             android:id="@+id/tv_piggy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/iv_piggy"
+
+            android:fontFamily="@font/mregular"
+            android:text="@string/piggy"
+            android:layout_below="@+id/iv_piggy"
+            android:textSize="18sp"
+            android:textStyle="bold"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="@font/mmedium"
-            android:text="Title News"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:layout_marginBottom="8dp"/>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_below="@id/tv_piggy"
+
+            android:layout_below="@+id/tv_piggy"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp">
 
@@ -58,7 +70,11 @@
                 android:fontFamily="@font/mregular"
                 android:maxLines="1"
                 android:text="@string/author"
-                android:textStyle="bold"/>
+
+                android:textStyle="bold"
+                android:ellipsize="end"
+                android:maxLines="1"/>
+
 
             <TextView
                 android:id="@+id/tv_relaseDate"
