@@ -20,9 +20,9 @@ public class NewsViewModel extends ViewModel {
     private static final String SOURCES = "google-news";
     private MutableLiveData<NewsRequest> liveDataNews = new MutableLiveData<>();
 
-    public void setNews() {
+    public void setNews(String country,String category) {
         ApiService mApiService = UtilsApi.getApiService();
-        Call<NewsRequest> call = mApiService.getNewsList(SOURCES, API_TOKEN);
+        Call<NewsRequest> call = mApiService.getNewsList(country, category, API_TOKEN);
         call.enqueue(new Callback<NewsRequest>() {
 
             public void onResponse(Call<NewsRequest> call, Response<NewsRequest> response) {
