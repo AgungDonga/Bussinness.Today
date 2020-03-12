@@ -52,9 +52,11 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         holder.tvAuthor.setText(result.getAuthor());
         holder.tvDate.setText(result.getDate());
         holder.cvNews.setOnClickListener(new CustomOnItemClickListener(position,(view, position1) -> {
-            Toast.makeText(activity,"pressed",Toast.LENGTH_SHORT).show();
+
+//            Toast.makeText(activity,"Pressed",Toast.LENGTH_SHORT).show();//ngecek
             Intent intent = new Intent(activity, DetailArticleActivity.class);
-            intent.putExtra(DetailArticleActivity.EXTRA_ARTICLE, result);
+            intent.putExtra(DetailArticleActivity.EXTRA_ARTICLE,result);
+
             activity.startActivity(intent);
         }));
 

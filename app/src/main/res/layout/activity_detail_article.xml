@@ -7,8 +7,10 @@
     tools:context=".view.DetailArticleActivity">
 
 
+
     <ImageView
         android:id="@+id/img_view"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:contentDescription="@string/todo"
@@ -16,10 +18,12 @@
         android:src="@drawable/img_piggy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="14dp"
@@ -30,6 +34,7 @@
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@+id/img_view">
 
         <TextView
@@ -41,14 +46,17 @@
 
         <TextView
             android:id="@+id/tv_title"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/mmedium"
             android:text="@string/piggy"
-            android:textColor="@color/colorBlue"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+
 
         <TextView
             android:id="@+id/tv_content"
@@ -56,9 +64,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/mregular"
+
             android:text="@string/piggy"
             android:textSize="16sp" />
 
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

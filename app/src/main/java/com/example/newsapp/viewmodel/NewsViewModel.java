@@ -5,6 +5,7 @@ import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
 import com.example.newsapp.BuildConfig;
 import com.example.newsapp.apihelper.ApiService;
 import com.example.newsapp.apihelper.UtilsApi;
@@ -17,10 +18,12 @@ import retrofit2.Response;
 public class NewsViewModel extends ViewModel {
 
     private static final String API_TOKEN = BuildConfig.API_KEY;
-    private static final String SOURCES = "google-news";
+//    private static final String SOURCES = "google-news";
     private MutableLiveData<NewsRequest> liveDataNews = new MutableLiveData<>();
 
-    public void setNews(String country,String category) {
+
+    public void setNews(String country, String category) {
+
         ApiService mApiService = UtilsApi.getApiService();
         Call<NewsRequest> call = mApiService.getNewsList(country, category, API_TOKEN);
         call.enqueue(new Callback<NewsRequest>() {
@@ -37,7 +40,7 @@ public class NewsViewModel extends ViewModel {
         });
     }
 
-    public LiveData<NewsRequest> getNews(){
+    public LiveData<NewsRequest> getNews() {
         return liveDataNews;
     }
 }
