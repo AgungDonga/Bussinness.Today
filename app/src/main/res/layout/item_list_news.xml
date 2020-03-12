@@ -69,10 +69,7 @@
                 android:fontFamily="@font/mregular"
                 android:maxLines="1"
                 android:text="@string/author"
-
-                android:textStyle="bold"
-                android:ellipsize="end"
-                android:maxLines="1"/>
+                android:textStyle="bold"/>
 
 
             <TextView
