@@ -21,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private NewsAdapter adapter;
     private RecyclerView recyclerView;
     private NewsViewModel newsViewModel;
-    private static final String SOURCES = "google-news";
+    private static final String COUNTRY = "id";
+    private static final String CATEGORY = "business";
     private ArrayList<NewsResult> results = new ArrayList<>();
 
     @Override
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.rv_piggy);
 
         newsViewModel = ViewModelProviders.of(this).get(NewsViewModel.class);
-        newsViewModel.setNews();
+        newsViewModel.setNews(COUNTRY,CATEGORY);
         newsViewModel.getNews().observe(this, newsRequest -> {
             List<NewsResult> list = newsRequest.getResult();
             results.addAll(list);

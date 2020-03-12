@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">NewsAPP</string>
+    <string name="app_name">Business Today</string>
     <string name="todo">todo</string>
-    <string name="news_app">News App</string>
+    <string name="news_app">Business Today</string>
     <string name="piggy">Piggy Wallet</string>
     <string name="author">author</string>
     <string name="release_date">Release Date</string>
+    <string name="content">content</string>
+    <string name="content2">Content</string>
 </resources>
