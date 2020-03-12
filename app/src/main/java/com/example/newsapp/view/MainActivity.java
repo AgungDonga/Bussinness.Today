@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     private int progressStatus = 0;
     private NewsAdapter adapter;
     private RecyclerView recyclerView;
-    private NewsViewModel newsViewModel;
     private static final String COUNTRY = "id";
     private static final String CATEGORY = "business";
     private ArrayList<NewsResult> results = new ArrayList<>();
@@ -37,34 +36,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.rv_piggy);
-        progressBar = (ProgressBar) findViewById(R.id.progressbar);
+        progressBar = findViewById(R.id.progressbar);
 
 
 
-        new Thread(new Runnable() {
-            public void run() {
-                while (progressStatus < 100) {
-                    progressStatus += 1;
-                    // Update the progress bar and display the
-                    //current value in the text view
-                    handler.post(new Runnable() {
-                        public void run() {
-                            progressBar.setProgress(progressStatus);
-
-                        }
-                    });
-                    try {
-                        // Sleep for 200 milliseconds.
-                        Thread.sleep(200);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+        new Thread(() -> {
+            while (progressStatus < 100) {
+                progressStatus += 1;
+                // Update the progress bar and display the
+                //current value in the text view
+                handler.post(() -> progressBar.setProgress(progressStatus));
+                try {
+                    // Sleep for 200 milliseconds.
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
-
             }
+
         }).start();
 
-        newsViewModel = ViewModelProviders.of(this).get(NewsViewModel.class);
+        NewsViewModel newsViewModel = ViewModelProviders.of(this).get(NewsViewModel.class);
         newsViewModel.setNews(COUNTRY,CATEGORY);
         newsViewModel.getNews().observe(this, newsRequest -> {
             List<NewsResult> list = newsRequest.getResult();

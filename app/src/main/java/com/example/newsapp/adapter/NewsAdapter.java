@@ -15,17 +15,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.newsapp.R;
-import com.example.newsapp.model.NewsRequest;
 import com.example.newsapp.model.NewsResult;
 import com.example.newsapp.view.CustomOnItemClickListener;
 import com.example.newsapp.view.DetailArticleActivity;
-import com.example.newsapp.view.MainActivity;
 
 import java.util.ArrayList;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
 
-    private NewsAdapter adapter;
+
     private Activity activity;
     private ArrayList<NewsResult> arrayList;
 
@@ -67,12 +65,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         return arrayList.size();
     }
 
-    public class NewsViewHolder extends RecyclerView.ViewHolder {
+    static class NewsViewHolder extends RecyclerView.ViewHolder {
         CardView cvNews;
         TextView tvTitle, tvDate, tvAuthor;
         ImageView ivPoster;
 
-        public NewsViewHolder(@NonNull View itemView) {
+        NewsViewHolder(@NonNull View itemView) {
             super(itemView);
 
             cvNews = itemView.findViewById(R.id.cv_new);
