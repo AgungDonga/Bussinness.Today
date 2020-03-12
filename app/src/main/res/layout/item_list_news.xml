@@ -70,6 +70,7 @@
                 android:maxLines="1"
                 android:text="@string/author"
                 android:textStyle="bold"/>
+            
 
 
             <TextView
