@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private int progressStatus = 0;
     private NewsAdapter adapter;
     private RecyclerView recyclerView;
+
     private static final String COUNTRY = "id";
     private static final String CATEGORY = "business";
     private ArrayList<NewsResult> results = new ArrayList<>();
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.rv_piggy);
         progressBar = findViewById(R.id.progressbar);
+
 
 
 
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         }).start();
 
         NewsViewModel newsViewModel = ViewModelProviders.of(this).get(NewsViewModel.class);
+
         newsViewModel.setNews(COUNTRY,CATEGORY);
         newsViewModel.getNews().observe(this, newsRequest -> {
             List<NewsResult> list = newsRequest.getResult();
