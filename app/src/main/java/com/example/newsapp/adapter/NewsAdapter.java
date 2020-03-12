@@ -1,6 +1,7 @@
 package com.example.newsapp.adapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,8 @@ import com.bumptech.glide.Glide;
 import com.example.newsapp.R;
 import com.example.newsapp.model.NewsRequest;
 import com.example.newsapp.model.NewsResult;
+import com.example.newsapp.view.CustomOnItemClickListener;
+import com.example.newsapp.view.DetailArticleActivity;
 import com.example.newsapp.view.MainActivity;
 
 import java.util.ArrayList;
@@ -50,13 +53,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         holder.tvTitle.setText(result.getTitle());
         holder.tvAuthor.setText(result.getAuthor());
         holder.tvDate.setText(result.getDate());
-        holder.cvNews.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Toast.makeText(activity, "Choose" +result.getTitle(), Toast.LENGTH_SHORT).show();
-
-
-            }
-        });
+        holder.cvNews.setOnClickListener(new CustomOnItemClickListener(position,(view, position1) -> {
+            Toast.makeText(activity,"pressed",Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(activity, DetailArticleActivity.class);
+            intent.putExtra(DetailArticleActivity.EXTRA_ARTICLE, result);
+            activity.startActivity(intent);
+        }));
 
     }
 
