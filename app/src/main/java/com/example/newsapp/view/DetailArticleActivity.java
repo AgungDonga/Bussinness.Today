@@ -25,6 +25,7 @@ public class DetailArticleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_article);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initContent();
 
         NewsResult result = getIntent().getParcelableExtra(EXTRA_ARTICLE);

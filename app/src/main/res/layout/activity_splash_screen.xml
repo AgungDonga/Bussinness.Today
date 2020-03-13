@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBlueAgung"
+    android:background="@color/colorYellowAgung"
     tools:context=".view.SplashScreenActivity">
 
     <LinearLayout
@@ -29,8 +29,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/news_app"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/blue_500"
         android:textSize="28sp"
+        android:fontFamily="@font/kestila"
         tools:layout_editor_absoluteX="142dp"
         tools:layout_editor_absoluteY="414dp" />
 

@@ -6,10 +6,12 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 
 import com.example.newsapp.R;
 import com.example.newsapp.adapter.NewsAdapter;
@@ -31,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<NewsResult> results = new ArrayList<>();
     private Handler handler = new Handler();
 
+
+    AnimationDrawable animationDrawable;
+    RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,4 +92,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+
 }
